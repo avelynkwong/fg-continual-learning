@@ -229,17 +229,37 @@
         <div class="image-container">
             <h4>Backward Transfer for Naive</h4>
             <img src="assets/bwt_naive.png" alt="Naive Backward Transfer">
-            <div class="caption">Caption for replay_forget.png</div>
+            <div class="caption">Above is the comparison of catastrophic forgetting measured by Backward Transfer (BWT) 
+                across sequential tasks for the naive fine-tuning approach. Higher BWT values indicate greater 
+                forgetting of previously learned knowledge. The coarse-grained DTD dataset (blue) exhibits 
+                substantially higher forgetting than the fine-grained Variants dataset (orange), particularly 
+                in earlier tasks. Both datasets show a gradual reduction in forgetting across tasks, though DTD 
+                consistently maintains higher BWT values, indicating that catastrophic forgetting is more severe 
+                in coarse-grained texture classification when using naive training approaches.</div>
         </div>
         <div class="image-container">
             <h4>Backward Transfer for Replay</h4>
             <img src="assets/bwt_replay.png" alt="Replay Backward Transfer">
-            <div class="caption">Caption for replay_forget.png</div>
+            <div class="caption">Above is the Backward Transfer comparison across DTD, Families, 
+                and Variants datasets using the replay strategy. While all datasets show a 
+                decreasing trend in forgetting as training progresses through sequential tasks, 
+                the coarse-grained DTD consistently demonstrates higher BWT values compared to both 
+                fine-grained aircraft datasets. This suggests that replay is more effective at 
+                preserving knowledge in domains with shared structural features. The fine-grained 
+                Variants dataset exhibits the lowest initial forgetting, highlighting how class 
+                similarity provides a common representational foundation that benefits memory 
+                retention during continual learning.</div>
         </div>
         <div class="image-container">
             <h4>Backward Transfer for EWC and Replay</h4>
             <img src="assets/bwt_ewc_replay.png" alt="EWC Replay Backward Transfer">
-            <div class="caption">Caption for replay_forget.png</div>
+            <div class="caption">Above is the Backward Transfer comparison for the combined EWC+replay approach 
+                across DTD, Families, and Variants datasets. This hybrid 
+                strategy delivers the lowest overall forgetting rates among all methods tested, 
+                with substantial reductions in BWT values by Task 4 for all datasets. The most 
+                dramatic improvements are observed in the fine-grained aircraft classifications, 
+                where BWT values drop below 0.1 by Task 4. This confirms that combining EWC with 
+                replay benefit domains with shared visual features and subtle class differences.</div>
         </div>
     </div>
 </body>
