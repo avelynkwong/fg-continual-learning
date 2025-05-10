@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Results from Catastrophic Forgetting in Fine Grained Datasets Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .image-container {
+            text-align: center;
+            max-width: 600px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .caption {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Visual Results from Catastrophic Forgetting in Fine Grained Datasets Project</h1>
+    <h3>Takashi Xu, Avelyn Wong, Daniel Yang, Randy Huang</h2>
+    <div class="gallery">
+        <h2>Sample Images for DTD and FGVC Aircraft Dataset</h2>
+        <div class="image-container">
+            <h4>Sample Images for DTD</h4>
+            <img src="assets/DTD_Sample.png" alt="DTD Sample">
+            <div class="caption">Caption for DTD_Sample.png</div>
+        </div>
+        <div class="image-container">
+            <h4>Sample Images for FGVC Aircraft Dataset</h4>
+            <img src="assets/FGVC_Sample.png" alt="FGVC Sample">
+            <div class="caption">Caption for FGVC_Sample (1).png</div>
+        </div>
+        <h2>Naive Approach</h2>
+        <div class="image-container">
+            <h4>Per Class Accuracy after Each Task for Naive DTD</h4>
+            <img src="assets/naive_acc_dtd.png" alt="Naive Accuracy DTD">
+            <div class="caption">Caption for naive_acc_dtd.png</div>
+        </div>
+        <div class="image-container">
+            <h4>Per Class Accuracy after Each Task for Naive FGVC Aircraft Variants</h4>
+            <img src="assets/naive_acc_var.png" alt="Naive Accuracy Variant">
+            <div class="caption">Caption for naive_acc_var.png</div>
+        </div>
+        <div class="image-container">
+            <h4>Average Relative Forgetting for Naive DTD</h4>
+            <img src="assets/naive_forget_dtd.png" alt="Naive Forgetting DTD">
+            <div class="caption">Caption for naive_forget_dtd.png</div>
+        </div>
+        <div class="image-container">
+            <h4>Average Relative Forgetting for Naive FGVC Aircraft Variant</h4>
+            <img src="assets/naive_forget_var.png" alt="Naive Forgetting Variant">
+            <div class="caption">Caption for naive_forget_var.png</div>
+        </div>
+        <h2>Replay</h2>
+        <div class="image-container">
+            <h4>Per Class Accuracy after Each Task for DTD with Replay</h4>
+            <img src="assets/replay_acc_dtd.png" alt="Replay Accuracy DTD">
+            <div class="caption">Caption for replay_acc_dtd.png</div>
+        </div>
+        <div class="image-container">
+            <h4>Per Class Accuracy after Each Task for FGVC Aircraft Families with Replay</h4>
+            <img src="assets/replay_acc_fam.png" alt="Replay Accuracy Family">
+            <div class="caption">Caption for replay_acc_fam.png</div>
+        </div>
+        <div class="image-container">
+            <h4>Per Class Accuracy after Each Task for FGVC Aircraft Variants with Replay</h4>
+            <img src="assets/replay_acc_var.png" alt="Replay Accuracy Variant">
+            <div class="caption">Caption for replay_acc_var.png</div>
+        </div>
+        <h2>EWC and Replay</h2>
+        <div class="image-container">
+            <h4>Per Class Accuracy after Each Task for DTD with EWC and Replay</h4>
+            <img src="assets/replay_ewc_acc_dtd.png" alt="Replay EWC Accuracy DTD">
+            <div class="caption">Caption for replay_ewc_acc_dtd.png</div>
+        </div>
+        <div class="image-container">
+            <h4>Per Class Accuracy after Each Task for FGVC Aircraft Families with EWC and Replay</h4>
+            <img src="assets/replay_ewc_acc_fam.png" alt="Replay EWC Accuracy Family">
+            <div class="caption">Caption for replay_ewc_acc_fam.png</div>
+        </div>
+        <div class="image-container">
+            <h4>Per Class Accuracy after Each Task for FGVC Aircraft Variants with EWC and Replay</h4>
+            <img src="assets/replay_ewc_acc_var.png" alt="Replay EWC Accuracy Variant">
+            <div class="caption">Caption for replay_ewc_acc_var.png</div>
+        </div>
+        <div class="image-container">
+            <h4>Average Relative Forgetting with Replay and EWC for each Granularity</h4>
+            <img src="assets/replay_ewc_forgetting.png" alt="Replay EWC Forgetting">
+            <div class="caption">Caption for replay_ewc_forgetting.png</div>
+        </div>
+        <div class="image-container">
+            <h4>Average Relative Forgetting with Replay for each Granularity</h4>
+            <img src="assets/replay_forget.png" alt="Replay Forgetting">
+            <div class="caption">Caption for replay_forget.png</div>
+        </div>
+        <h2>Confusion Matrices</h2>
+        <div class="image-container">
+            <h4>Confusion Matrix for DTD Naive Approach</h4>
+            <img src="assets/naive_DTD_conf.png" alt="Naive DTD Confusion">
+            <div class="caption">Caption for replay_forget.png</div>
+        </div>
+        <div class="image-container">
+            <h4>Confusion Matrix for FGVC Aircraft Variants Naive Approach</h4>
+            <img src="assets/naive_variant_conf.png" alt="Naive Variants Confusion">
+            <div class="caption">Caption for replay_forget.png</div>
+        </div>
+        <div class="image-container">
+            <h4>Confusion Matrix for DTD with Replay</h4>
+            <img src="assets/replay_dtd_conf.png" alt="Replay DTD Confusion">
+            <div class="caption">Caption for replay_forget.png</div>
+        </div>
+        <div class="image-container">
+            <h4>Confusion Matrix for FGVC Aircraft Families with Replay</h4>
+            <img src="assets/replay_family_conf.png" alt="Replay Families Confusion">
+            <div class="caption">Caption for replay_forget.png</div>
+        </div>
+        <div class="image-container">
+            <h4>Confusion Matrix for FGVC Aircraft Variants with Replay</h4>
+            <img src="assets/replay_variant_conf.png" alt="Replay Variants Confusion">
+            <div class="caption">Caption for replay_forget.png</div>
+        </div>
+        <div class="image-container">
+            <h4>Confusion Matrix for DTD with EWC and Replay</h4>
+            <img src="assets/ewc_replay_dtd_conf.png" alt="EWC Replay DTD Confusion">
+            <div class="caption">Caption for replay_forget.png</div>
+        </div>
+        <div class="image-container">
+            <h4>Confusion Matrix for FGVC Aircraft Families with EWC and Replay</h4>
+            <img src="assets/ewc_replay_family_conf.png" alt="EWC Replay Family Confusion">
+            <div class="caption">Caption for replay_forget.png</div>
+        </div>
+        <div class="image-container">
+            <h4>Confusion Matrix for FGVC Aircraft Variants with EWC and Replay</h4>
+            <img src="assets/ewc_replay_variant_conf.png" alt="EWC Replay Variant Confusion">
+            <div class="caption">Caption for replay_forget.png</div>
+        </div>
+        <h2>Backward Transfer</h2>
+        <div class="image-container">
+            <h4>Backward Transfer for Naive</h4>
+            <img src="assets/bwt_naive.png" alt="Naive Backward Transfer">
+            <div class="caption">Caption for replay_forget.png</div>
+        </div>
+        <div class="image-container">
+            <h4>Backward Transfer for Replay</h4>
+            <img src="assets/bwt_replay.png" alt="Replay Backward Transfer">
+            <div class="caption">Caption for replay_forget.png</div>
+        </div>
+        <div class="image-container">
+            <h4>Backward Transfer for EWC and Replay</h4>
+            <img src="assets/bwt_ewc_replay.png" alt="EWC Replay Backward Transfer">
+            <div class="caption">Caption for replay_forget.png</div>
+        </div>
+    </div>
+</body>
+</html>
