@@ -158,7 +158,7 @@
                 to use old information to help predict new classes within fine-grained datsets. The more visually distinct classes in DTD may not benefit as much from this, as the model must learn more features in new classes.
             </div>
         </div>
-        <h2>Confusion Matrices (Pay Attention to Scale!)</h2>
+        <h2>Confusion Matrices</h2>
         <h3>Naive Approach</h3>
         <div class="image-container">
             <h4>Confusion Matrix for DTD Naive Approach</h4>
@@ -187,28 +187,43 @@
             <img src="assets/replay_family_conf.png" alt="Replay Families Confusion">
             <div class="caption">Above is the confusion matrix for FGVC Aircraft Families with replay. Again, compared to the naive approach, there is improvement as the diagonal trails longer. One important thing to note is the scale, as the colors are lighter
                 in this plot compared to other plots. This is due to the fact that class 15 (Boeing 727) is being strongly misclassified as class 40 (EMB-120). To the human eye, these classes look fairly visually distinct,
-                but it is possible that these misclassifications are due to both aircraft being 
+                but it is possible that these misclassifications are due to an overlap in features between the two classes, leading to the representation of class 15 being overridden by class 40.
             </div>
         </div>
         <div class="image-container">
             <h4>Confusion Matrix for FGVC Aircraft Variants with Replay</h4>
             <img src="assets/replay_variant_conf.png" alt="Replay Variants Confusion">
-            <div class="caption">Caption for replay_forget.png</div>
+            <div class="caption">Above is the confusion matrix for FGVC Aircraft Variants with replay. Similar to both DTD and Aircraft Families, there is an increase in performance from previous tasks, notably, task three. However, like DTD, the vast majority of
+                classes are still being misclassified as the final task classes, once again indicating a bias towards the final task, suggesting that replay is not enough to mitigate catastrophic forgetting.
+            </div>
         </div>
+        <h3>EWC and Replay</h3>
         <div class="image-container">
             <h4>Confusion Matrix for DTD with EWC and Replay</h4>
             <img src="assets/ewc_replay_dtd_conf.png" alt="EWC Replay DTD Confusion">
-            <div class="caption">Caption for replay_forget.png</div>
+            <div class="caption">Above is the confusion matrix for DTD with EWC and replay as mitigation techniques. While one can see a strong preservation of classes from task zero and task one, new classes beyond that are seemingly not learned.
+                All classes from task two are not predicted at all, and the model has the best accuracy on classes within task one. Furthermore, almost all classes are being misclassified as class 45 ("wrinkled"), which is most likeley due to the general nature of the class.
+                When observing the images in the class, one can see that the images have a fairly generic appearance, thus making it a good candidate for the model to misclassify other classes as. Unlike the other confusion matrices, the model still predicts classes
+                from previous tasks, but the presence of the wrinkled class is so strong that it is likely that the model is not learning anything new, but rather, just predicting the most general class.
+            </div>
         </div>
         <div class="image-container">
             <h4>Confusion Matrix for FGVC Aircraft Families with EWC and Replay</h4>
             <img src="assets/ewc_replay_family_conf.png" alt="EWC Replay Family Confusion">
-            <div class="caption">Caption for replay_forget.png</div>
+            <div class="caption">Above is the confusion matrix for FGVC Aircraft Families with EWC and replay as mitigation techniques. Just as with the confusion matrix for Aircraft Families with replay, it is important to take note of the scale of the
+                confusion matrix. Compared to just replay, the model has a longer diagonal trail, meaning that it able to preserve more information from previous tasks, reducing the amount of forgetting between tasks. This suggests that EWC and replay are more
+                effective than just replay alone. However, the model runs into the same issue as with just replay, with class 15 (Boeing 727) being misclassified as class 40 (EMB-120). Again, this suggests that the model is unable to preserve the features of class 15, and it is
+                instead being overridden by class 40.
+            </div>
         </div>
         <div class="image-container">
             <h4>Confusion Matrix for FGVC Aircraft Variants with EWC and Replay</h4>
             <img src="assets/ewc_replay_variant_conf.png" alt="EWC Replay Variant Confusion">
-            <div class="caption">Caption for replay_forget.png</div>
+            <div class="caption">Above is the confusion matrix for FGVC Aircraft Variants with EWC and replay as mitigation techinques. The confusion matrix suggests that the combination of EWC and replay performs the best on Aircraft Variants, as one can see a long
+                diagonal trail, indicating that the model is able to preserve the features of classes from previous tasks. While there is still a visible bias towards the final task, the confusion matrix indicates a higher number of classes being predicted correctly. Furthermore, there are
+                no unexpected behaviors, such as the bias towards class 45 in the DTD confusion matrix, or the misclassification of class 15 as class 40 in the Aircraft Families confusion matrix. Thus, this supports the notion that EWC and replay reduces forgetting more between fine-grained tasks,
+                potentially due to the model being able to preserve the features of classes from previous tasks.
+            </div>
         </div>
         <h2>Backward Transfer</h2>
         <div class="image-container">
